@@ -1,0 +1,27 @@
+{
+  "name": "http-lab",
+  "version": "1.0.0",
+  "description": "",
+  "keywords": [
+    "http",
+    "express",
+    "server"
+  ],
+  "license": "BSD-3-Clause",
+  "author": "kubiak@calpoly.edu",
+  "type": "module",
+  "main": "src/index.ts",
+  "scripts": {
+    "dev": "nodemon",
+    "build": "npx tsc -b && echo Done",
+    "start": "node -r source-map-support/register dist/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "neat-csv": "^7.0.0"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6"
+  }
+}
