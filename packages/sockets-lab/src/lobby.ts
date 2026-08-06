@@ -11,14 +11,14 @@ export class Lobby {
     private totalClientsEverSeen : number = 0
 
     /// Return a reasonable default name to assign to a new client.
-    nameForNewClient() : string {
+    getNameForNewClient() : string {
         // inelegant but will suffice for this lab.
         return `Player ${ this.totalClientsEverSeen + 1 }`;
     }
 
     /// Return the 'Matchup' that 'client' is a part of, or null
     /// if 'client' is not part of one.
-    matchup( client : Client ) : Matchup | null {
+    getMatchup( client : Client ) : Matchup | null {
         const foundMatchup : Matchup | undefined = this.clientToMatchup.get( client );
         return foundMatchup ?? null;
     }

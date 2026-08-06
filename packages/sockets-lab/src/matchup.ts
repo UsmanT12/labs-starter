@@ -17,13 +17,13 @@ export class Matchup {
 
     /// Return the 'Client' who is playing the indicated
     /// 'mark' within the current game.
-    private clientByMark( mark : Mark ) : Client {
+    private getClientByMark( mark : Mark ) : Client {
         return this.clients[ mark == 'X' ? this.X_PLAYER_IDX : this.O_PLAYER_IDX ];
     }
 
     /// Return the opponent of 'client', which must be one 
     /// of the two in 'this.clients'.    
-    otherClient( client : Client ) : Client {
+    getOtherClient( client : Client ) : Client {
         if( client === this.clients[ 0 ] ) {
             return this.clients[ 1 ];
         } else if ( client === this.clients[ 1 ] ) {
@@ -48,7 +48,7 @@ export class Matchup {
     /// messages to the two players (including handling an end-game
     //  situation, if that occurs); otherwise send appropriate
     /// messages to 'client' letting them know their mistake.
-    playerAttemptMove( client : Client, row : number, col : number ) {
+    attemptPlayerMove( client : Client, row : number, col : number ) {
         if( !this.clients.includes( client ) ) {
             console.log( "ERROR: unrecognized 'client' trying to make a move in match." )
             return;
@@ -60,7 +60,7 @@ export class Matchup {
     /// Send a message to each of the two clients showing 
     /// them the current state of the board.
     private showBoardToBoth() {
-        const boardMsg : string = this.ticTacToe.msgShowingBoard();
+        const boardMsg : string = this.ticTacToe.getBoardMsg();
         for( const client of this.clients ) {
             client.sendMsg( boardMsg );
         }

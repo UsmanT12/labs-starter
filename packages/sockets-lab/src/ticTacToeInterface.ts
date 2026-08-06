@@ -11,11 +11,11 @@ export interface ITicTacToe {
     /// "BOARD X - - 
     ///        - X O
     ///        O - -"    
-    msgShowingBoard : () => string;
+    getBoardMsg : () => string;
 
     /// Return whether integer 'row' and 'column' identify a legal
     /// position on the board which is not already marked.
-    legalMove: ( row : number, column : number ) => boolean;
+    isLegalMove: ( row : number, column : number ) => boolean;
 
     /// Mark the board at the indicated 'row' in [0,2] and
     /// 'col' in [0,2] with the current mark; then alternate
@@ -24,7 +24,7 @@ export interface ITicTacToe {
     makeMove : ( row : number, col : number ) => boolean;
 
     /// Return whether all spaces have been marked.
-    full : () => boolean;
+    isFull : () => boolean;
 
     /// Return the 'Mark' of the winner, or null of there is no winner.
     checkForWinner: () => OptionalMark;
