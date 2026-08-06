@@ -1,4 +1,4 @@
-import {Mark, OptionalMark, Row, Board, ITicTacToe } from './ticTacToeInterface.js'
+import {Mark, OptionalMark, Row, Board, ITicTacToe } from './ticTacToeInterface.ts'
 
 // TODO: Fill in this class so that it has all
 // the properties of 'ITicTacToe'. You already did

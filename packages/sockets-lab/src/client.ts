@@ -1,7 +1,7 @@
 import { Socket } from "net";
-import { Player } from "./player.js"
-import { MessageBuffer } from "./messageBuffer.js";
-import { sendTelnetMsgToSocket } from "./telnetUtility.js";
+import { Player } from "./player.ts"
+import { MessageBuffer } from "./messageBuffer.ts";
+import { sendTelnetMsgToSocket } from "./telnetUtility.ts";
 
 /// A Telnet client talking to our server.
 export class Client {

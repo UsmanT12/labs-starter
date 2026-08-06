@@ -1,5 +1,5 @@
-import { Client } from "./client.js"
-import { Matchup } from "./matchup.js"
+import { Client } from "./client.ts"
+import { Matchup } from "./matchup.ts"
 
 /// Manages the player waiting to get into a game
 /// as well as multiple currently running games.

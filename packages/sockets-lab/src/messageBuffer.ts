@@ -1,4 +1,4 @@
-import { TELNET_MSG_END } from "./telnetUtility.js"
+import { TELNET_MSG_END } from "./telnetUtility.ts"
 
 // Stores characters sent along the Telnet connection for a particular client.
 export class MessageBuffer {

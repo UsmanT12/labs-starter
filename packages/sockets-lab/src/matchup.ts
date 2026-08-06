@@ -1,5 +1,5 @@
-import { Client } from "./client.js"
-import { Mark, ITicTacToe } from "./ticTacToeInterface.js"
+import { Client } from "./client.ts"
+import { Mark, ITicTacToe } from "./ticTacToeInterface.ts"
 
 /// Coordinates a series of games between
 /// the same two players.
