@@ -1,8 +1,8 @@
 import { describe, test, expect } from "vitest"
 
-import { DegreesCelsius } from "../src/learnTypes";
-import { celsiusToFahrenheit, strToNum, transformNums, ScalarOp } from '../src/learnFunctions.js' 
-import { BoundingBox } from '../src/learnInterfacesAndClasses.js'
+import { DegreesCelsius } from "../src/learnTypes.ts";
+import { celsiusToFahrenheit, strToNum, transformNums, ScalarOp } from '../src/learnFunctions.ts' 
+import { BoundingBox } from '../src/learnInterfacesAndClasses.ts'
 
 // A call to describe is a way to make a top-level grouping of some
 // tests, e.g., you could use a describe call to define the tests
