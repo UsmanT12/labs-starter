@@ -4,6 +4,6 @@ export interface Player {
 }
 
 /// Return whether 'name' is a valid player name.
-export function validPlayerName( name : string ) : boolean {
+export function isValidPlayerName( name : string ) : boolean {
     return name.length > 0    
 }
