@@ -30,7 +30,7 @@ Functions: Design Recipe and Type Annotations
         (3) anything created inside of the function (local variables).
 */
 // Convert 'celsius' to Fahrenheit.
-export function celsiusToFahrenheit( celsius : DegreesCelsius ) : DegreesFahrenheit 
+export function convertCToF( celsius : DegreesCelsius ) : DegreesFahrenheit 
 {
     const fahrenheit : DegreesFahrenheit = celsius * ( 9 / 5 ) + 32;
     return fahrenheit;
@@ -100,7 +100,7 @@ function addOne( x : number ): number
 }
 
 // Square 'x'.
-function squared( x : number ): number
+function square( x : number ): number
 {
     return x ** 2;
 }
@@ -110,11 +110,11 @@ function squared( x : number ): number
 // type 'ScalarOp'.
 //
 // (If you think about it, the same applies to the
-//  names 'addOne' and 'squared'; these are just two
+//  names 'addOne' and 'square'; these are just two
 //  names bound to function values that happen to be
 //  specifically 'ScalarOp' functions.)
 let myScalarFunction : ScalarOp = addOne;
-myScalarFunction = squared;
+myScalarFunction = square;
 
 
 
@@ -209,7 +209,7 @@ Taking what you've learned and revisiting the tests
 //   (2) test
 //
 //  Look at one of the calls to 'describe'. What arguments are being passed to it?
-//   (1) a string, e.g., 'celsiusToFahrenheit', and
+//   (1) a string, e.g., 'convertCToF', and
 //   (2) an anonymous function.
 //
 //  And what happens inside this anonymous function? Calls to the function 'test'.

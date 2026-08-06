@@ -1,22 +1,22 @@
 import { describe, test, expect } from "vitest"
 
 import { DegreesCelsius } from "../src/learnTypes.ts";
-import { celsiusToFahrenheit, strToNum, transformNums, ScalarOp } from '../src/learnFunctions.ts' 
+import { convertCToF, strToNum, transformNums, ScalarOp } from '../src/learnFunctions.ts' 
 import { BoundingBox } from '../src/learnInterfacesAndClasses.ts'
 
 // A call to describe is a way to make a top-level grouping of some
 // tests, e.g., you could use a describe call to define the tests
 // for a particular function
-describe('celsiusToFahrenheit', () => {
+describe('convertCToF', () => {
   // A test call is a way to make a subgrouping of some tests.
   test('basic functionality', () => {
     // Here we are verifying that if the input is 0, the output should be
     // _close to_ 32 (when dealing with floating-point answers, there's
     // a risk of the answer not being exactly what you would expect).
-    expect(celsiusToFahrenheit(0)).toBeCloseTo(32);
-    expect(celsiusToFahrenheit(100)).toBeCloseTo(212);
+    expect(convertCToF(0)).toBeCloseTo(32);
+    expect(convertCToF(100)).toBeCloseTo(212);
     const c : DegreesCelsius = 123;
-    expect(celsiusToFahrenheit(c)).toBeCloseTo(253.4);
+    expect(convertCToF(c)).toBeCloseTo(253.4);
   });
 });
 

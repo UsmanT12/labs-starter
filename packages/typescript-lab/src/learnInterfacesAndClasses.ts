@@ -181,12 +181,12 @@ export class BoundingBox
 
     // Here are some _methods_ for this class. 
 
-    width() : number 
+    getWidth() : number 
     {
         return this.topRight.x - this.bottomLeft.x;
     } 
 
-    height() : number 
+    getHeight() : number 
     {
         return this.topRight.y - this.bottomLeft.y;
     } 

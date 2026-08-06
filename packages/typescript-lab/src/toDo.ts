@@ -26,7 +26,7 @@ Functions Exercises
 //       statement are given to you below.
 /*
 // Return whether 'board' does not contain a 'null'.
-export function boardFull( board : Board ): boolean
+export function isFull( board : Board ): boolean
 {    
 }
 */
@@ -36,7 +36,7 @@ export function boardFull( board : Board ): boolean
 /*
 // Return whether integer 'row' and 'column' identify a legal
 // position on the board which is not already marked.
-export function boardLegalMove( board: Board, row : number, column : number ): boolean
+export function isLegalMove( board: Board, row : number, column : number ): boolean
 {    
 }
 */
@@ -44,7 +44,7 @@ export function boardLegalMove( board: Board, row : number, column : number ): b
 // TODO: Test and write this function.
 /*
 // Return the 'Mark' of the winner, or null of there is no winner.
-export function winner( board : Board ): OptionalMark
+export function getWinner( board : Board ): OptionalMark
 {
 }
 */
@@ -59,7 +59,7 @@ export function winner( board : Board ): OptionalMark
 //  Each of the three lines should end with two whitespace characters '\r' and '\n'.
 //  Make sure that the rows show up aligned with each other (you're setting up
 //  something that will be useful in the next lab).
-export function boardAsStr( board : Board ): string
+export function getBoardStr( board : Board ): string
 {    
 }
 */
@@ -80,13 +80,13 @@ export class TicTacToe {
     nextToPlay: Mark;
 
     // Return a message displaying the board.
-    msgShowingBoard(): string
+    getBoardMsg(): string
     {
     }
 
     // Return whether integer 'row' and 'column' identify
     // a valid next move.
-    legalMove( row : number, column : number ): boolean
+    isLegalMove( row : number, column : number ): boolean
     {
     }
 
@@ -100,7 +100,7 @@ export class TicTacToe {
     }
 
     // Return whether all spaces have been marked.
-    full() : boolean
+    isFull() : boolean
     {
     }
 
