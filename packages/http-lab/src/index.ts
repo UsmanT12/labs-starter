@@ -14,17 +14,8 @@ let's use an environment variable--process.env.STATIC. If that
 environment variable is not there, the name 'staticDir' will be
 bound to "public" instead.
 
-The syntax 
-    a = b || c 
-is an example of logical OR in JavaScript. Counterintuitively, the
-result of such an expression is _not_ necessarily boolean; rather,
-an expression "b || c || d || e..." will evaluate to either
-    (1) the first non-"falsy" value found moving from left to right, or
-    (2) the "falsy" value at the right end.
-"Falsy" values include 0, "", null, undefined, NaN, and of course 'false' itself.
-
-So basically, if 'process.env.STATIC' is defined, 'staticDir' will be bound 
-to that; otherwise 'staticDir' will be bound to the string value 'public'.
+Normally, 'process.env.STATIC' will be 'undefined'; thus (via JS's logical OR rules),
+the name 'staticDir' will end up bound to the string value 'public'.
 
 How would 'process.env.STATIC' be defined? It could be set in the terminal
 environment before running "npm run start". (You won't actually need
