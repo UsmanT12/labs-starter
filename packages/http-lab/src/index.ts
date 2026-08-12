@@ -42,7 +42,7 @@ If such a GET request is received, by this server, said request will be handled 
 the callback function 'numberedContentsCallback', which you will end up completing in
 'numberedCallback.ts'.
 
-IMPORTANT: Whatever 'numberedCallback' does, it needs to be _fast_; otherwise
+Whatever 'numberedCallback' does, it needs to be _fast_; otherwise
 the server will be locked up handling this GET request and might not be 
 responsive to GET requests coming from other clients. The trick is to
 use _asynchronous code_ inside of 'numberedCallback'.
