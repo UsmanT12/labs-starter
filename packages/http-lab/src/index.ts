@@ -1,4 +1,5 @@
 import express, { Express } from "express";
+import { numberedCallback } from "./numberedCallback.ts";
 
 /*
 Express gives us a default export (the "express" in "import express")
@@ -21,7 +22,7 @@ How would 'process.env.STATIC' be defined? It could be set in the terminal
 environment before running "npm run start". (You won't actually need
 to define process.env.STATIC for this lab.)
 */
-const staticDir : string = process.env.STATIC || "public";
+export const staticDir : string = process.env.STATIC || "public";
 
 /*
 Tell our `app` that if it receives a request X which we have
@@ -33,10 +34,27 @@ and that matching file should be returned to the client.
 app.use(express.static(staticDir));
 
 /*
-Just like our tic-tac-toe server, this server
-needs to listen for connections. Express servers typically
-use port 3000, but we may want to change that, so again,
-make it possible for us to specify a different port using
+Here we specify a _custom route_. 
+Specifically, we are creating the ability for our server to handle GET requests
+(notice we're calling the 'get' method) of the form "http://SERVER-LOCATION/numbered/:file",
+were the ":file" part just represents some file path, e.g., "test.csv".
+If such a GET request is received, by this server, said request will be handled using 
+the callback function 'numberedContentsCallback', which you will end up completing in
+'numberedCallback.ts'.
+
+IMPORTANT: Whatever 'numberedCallback' does, it needs to be _fast_; otherwise
+the server will be locked up handling this GET request and might not be 
+responsive to GET requests coming from other clients. The trick is to
+use _asynchronous code_ inside of 'numberedCallback'.
+*/
+app.get("/numbered/:file", numberedCallback );
+
+/*
+Here's where the server actually starts listening for 
+incoming connections.
+
+Express servers typically use port 3000, but we may want the capacity to change that, 
+so again, make it possible for us to specify a different port using
 an environment variable 'process.env.PORT'.
 */
 const port : number = Number( process.env.PORT || 3000 );
