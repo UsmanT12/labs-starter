@@ -34,10 +34,12 @@ Splitting and joining strings.
 
 const fruitsText : string = "apple banana grapefruit"
 
-// contents will be [ "apple", "banana", "grapefruit" ]
+// contents will be [ "apple", "banana", "grapefruit" ].
+// Note that 'split' is a method of 'string'.
 const fruitsSplit : string[] = fruitsText.split( " " ); 
 
-// contents will be same as 'fruitsText'
+// contents will be same as 'fruitsText'. Note that 'join'
+// is a method of 'Array'.
 const fruitsTextRecombined = fruitsSplit.join( " " );
 
 // The lines of a text file are delineated using newline (\n)
