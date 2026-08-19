@@ -11,7 +11,7 @@
   "type": "module",
   "main": "src/index.ts",
   "scripts": {
-    "dev": "nodemon",
+    "dev": "npx nodemon",
     "build": "npx tsc -b && echo Done",
     "start": "node -r source-map-support/register dist/index.js",
     "test": "npx vitest"

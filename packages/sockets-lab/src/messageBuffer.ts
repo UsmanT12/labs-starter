@@ -10,28 +10,18 @@ export class MessageBuffer {
   receiveFromClient( chunk : string ) : string[] {
     this.buffer += chunk
     const delimiter : string = TELNET_MSG_END
-    const full_messages : string[] = []
+    let full_messages : string[] = []
 
     /// TODO:
-    /// If the buffer now contains
-    /// one or more Telnet messages (substrings ending with TELNET_MSG_END)
-    /// then remove these messages from the buffer and return the 
-    /// delimiter-trimmed messages. For instance, if the buffer contains
-    /// "message 1\r\nmessage 2\r\nmessa" then the return value should be
-    /// ["message 1","message 2"] and the buffer should be left with "messa".
-    /// Filter out any backspace characters from generated messsages using
-    /// handleBackspaces.
-    while ( true ) {
-        const idx_of_delimiter : number = this.buffer.indexOf( delimiter )
-        if (idx_of_delimiter !== -1) {
-            const msg_text : string = this.buffer.substring( 0, idx_of_delimiter )
-            this.buffer = this.buffer.substring( idx_of_delimiter + delimiter.length )
-            const no_backspaces : string = this.handleBackspaces( msg_text );
-            full_messages.push( no_backspaces );
-        } else {
-            break
-        }
-    }
+    /// (1) Use 'string.split' to create an array of strings 'messages' from 'this.buffer' 
+    ///     based on splitting 'this.buffer' wherever it contains 'delimiter'.
+    ///     If 'this.buffer' ends with 'delimiter', then 'messages'
+    ///     will have an empty string at the back. If 'this.buffer' contains no instance of 'delimiter',
+    ///     then 'messages' will contain one string identical with 'this.buffer'.  
+    /// (2) Let 'this.buffer' now become the _last_ string (possibly an empty string) in 'messages',
+    ///     and let 'full_messages' contain all the strings except the last one in 'messages'.
+    ///     (Consider 'Array.slice').
+    /// (3) Return the strings of 'full_messages' with 'handleBackspaces' applied (consider 'Array.map').
 
     return full_messages
   }
