@@ -3,7 +3,7 @@ Types Exercises
 */
 
 // TODO: Use 'type' to define a datatype named 'Mark' that
-// is allowed to be either the string "X" oer the string "O".
+// is allowed to be either the string "X" or the string "O".
 
 // TODO: Define a datatype named 'OptionalMark' that is 
 // allowed to be either a 'Mark' or null.
