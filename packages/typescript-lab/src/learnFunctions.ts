@@ -31,7 +31,6 @@ Functions: Design Recipe and Type Annotations
 */
 // Convert 'celsius' to Fahrenheit.
 export function convertCToF( celsius : DegreesCelsius ) : DegreesFahrenheit 
-{
     const fahrenheit : DegreesFahrenheit = celsius * ( 9 / 5 ) + 32;
     return fahrenheit;
 }
